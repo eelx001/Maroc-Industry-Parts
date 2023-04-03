@@ -367,7 +367,6 @@ svg {
             <div class="col-12 text-center" >
                 <h3 style="color:white;">Nos</h3><h1 class="display-2  text-white mb-md-3">Produits</h1>
             </div>
-    <hr style="color:white;width:98%;">
         </div>
     </div>    
     <form class="form-inline justify-content-center" action="" method="get">
