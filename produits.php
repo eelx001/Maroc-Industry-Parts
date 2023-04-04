@@ -404,7 +404,7 @@ svg {
 
   <?php
 // Get all products from the database
-$sql = "SELECT id, produit, description, photo, date FROM products ORDER BY id DESC LIMIT 10;";
+$sql = "SELECT id, produit, description, photo, date FROM products ORDER BY id DESC LIMIT 30;";
 $stmt = $pdo->query($sql);
 $products = $stmt->fetchAll(PDO::FETCH_NUM);
 ?>
