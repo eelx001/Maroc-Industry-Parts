@@ -382,7 +382,7 @@ svg {
         </defs>
     </svg>
 
-    <button id="gooey-button" type="submit" class="btn btn-success my-2 my-sm-0">
+    <button id="gooey-button" type="submit" class="btn btn-success my-2 my-sm-0" disabled>
         Rechercher
         <span class="bubbles">
             <span class="bubble"></span>
