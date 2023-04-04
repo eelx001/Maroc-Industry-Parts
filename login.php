@@ -12,7 +12,7 @@ include('classes/log1.php');
     <link href="img1/fav.png" rel="icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <title>login</title>
+    <title>MIP login</title>
 </head>
 <style>
   .container{
