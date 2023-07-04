@@ -10,7 +10,7 @@ include('classes/conn.php');
     <meta charset="utf-8">
     <title>Maroc Industry Parts</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
- 
+
     <!-- Favicon -->
     <link href="img1/fav.png" rel="icon">
 
@@ -37,72 +37,72 @@ include('classes/conn.php');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
 
 body{
- background:#253A3D  ;
+background:#253A3D  ;
 }
 h2{
-	text-align: center;
-	margin-bottom: 5rem;
-	font-size: 4rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  font-size: 4rem;
 }
 
 .all-products{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .product{
     border:0px solid;
     box-shadow:8px 20px 90px #666666;
-	overflow: hidden;
-	background: #ffffff;
-	color: #21201e;
-	text-align: center;
-	width: 240px;
-	height: 400px;
-	padding: 2rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-radius: 1.2rem;
-	margin: 2rem;
+  overflow: hidden;
+  background: #ffffff;
+  color: #21201e;
+  text-align: center;
+  width: 240px;
+  height: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.2rem;
+  margin: 2rem;
 }
 .product .product-title, .product .product-price{
-	font-size: 18px;
+  font-size: 18px;
 }
 
 .product:hover img{
-	scale:  1.1;
+  scale:  1.1;
 }
 
 .product:hover {
-	box-shadow: 2px 10px 50px #3aa8a3;
+  box-shadow: 2px 10px 50px #3aa8a3;
 }
 
 .product img {
-	width:100%;
-	height: 50%;
-	margin: 1rem;
-	transition: all 0.3s;
+  width:100%;
+  height: 50%;
+  margin: 1rem;
+  transition: all 0.3s;
     border-radius:20px;
 }
 
 .product a:link, .product a:visited{
-	color: white;
-	display: inline-block;
-	text-decoration: none;
-	background-color: #348785;
-	padding: 1.2rem 3rem;
-	border-radius: 1rem;
-	margin-top: 1rem;
-	font-size: 14px;
-	transition: all 0.2s;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #348785;
+  padding: 1.2rem 3rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  font-size: 14px;
+  transition: all 0.2s;
 }
 
 .product a:hover{
-	transform: scale(1.1);
+  transform: scale(1.1);
 }
 svg {
   position: absolute;
@@ -305,13 +305,13 @@ svg {
 </style>
 
 <body>
-     <!-- Header Start -->
-     <div class="container-fluid bg-dark px-0">
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark px-0">
         <div class="row gx-0">
             <div class="col-lg-3 bg-dark d-none d-lg-block">
                 <a href="index.php" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                 <h1 class="m-0 display-4 text-primary text-uppercase"><img src="img1/oko.png" width="275px"></h1>
-                   
+                  
                 </a>
             </div>
             <div class="col-lg-9">
@@ -467,7 +467,7 @@ $products = $stmt->fetchAll(PDO::FETCH_NUM);
                 <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-5">
                     <h4 class="text-uppercase text-white mb-4">Maroc Industry Parts</h4>
                     <p class="text-light"> est une entreprise spécialisée dans la fabrication et la distribution de pièces industrielles au Maroc. Elle fournit une large gamme de produits pour différents secteurs industriels tels que l'automobile, l'aéronautique, la construction, l'énergie, etc.</p>
-                   
+                  
                 </div>
             </div>
         </div>
