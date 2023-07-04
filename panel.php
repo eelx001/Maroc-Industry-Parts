@@ -5,7 +5,6 @@
   include ('classes/logout.php');
   include('classes/up.php');
   include('classes/log1.php');
-  include('classes/edit.php');  
   if(!isset($_SESSION['id'])){
     header('location: login.php');
   }
@@ -108,77 +107,78 @@ table{
           </div>
           <br>
       </div>
-      <form method="post" enctype="multipart/form-data">
-    <div class="container">
-        <div class="mb-3">
+    <form method="post" enctype="multipart/form-data">
+      <div class="container">
+      <div class="mb-3">
+            
             <label for="exampleFormControlInput1" class="form-label">Produit</label>
-            <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="title" name="editProduit" value="<?php echo isset($editProduit) ? $editProduit : ''; ?>" required>
-        </div>
-        <div class="mb-3">
+            <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="title" name="ptitle" required>
+            </div>
+            <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description" name="editDescription" required><?php echo isset($editDescription) ? $editDescription : ''; ?></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description" name="dpost" required></textarea>
             <br>
-            <label class="form-label" for="customFile">Photo:</label><br>
-            <input type="file" class="" id="customFile" placeholder="Upload image" name="editPhoto" <?php echo isset($editPhoto) ? '' : 'required'; ?> />
-            <input type="hidden" name="editId" value="<?php echo isset($editId) ? $editId : ''; ?>" />
-            <button class="btn btn-default" type="submit" name="aff">Afficher</button> 
-            <button class="btn btn-default" type="submit" name="update">Update</button>
-        </div>
-    </div>
-</form>
+            
+                <label class="form-label" for="customFile">Photo:</label><br>
+                <input type="file" class="" id="customFile" placeholder="Upload image" name="upost" required/>
 
-        
+                <button class="btn btn-default" type="submit" name="aff">Afficher</button> </div>
+            </div>
+
+            </form>
+
  
 
 <br>
 <br>
 </div>
 
-<form method="post" class="damn" enctype="multipart/form-data">
-    <div class="input-group">
-        <div class="input-group-prepend">
-        </div>
-        <input type="seo" id="myInput" class="form-control" placeholder="Rechercher...">
-    </div>
-    <br>
-    <div style="height: 500px; overflow-y: scroll;border: 1px solid #308F8A;">
-        <table class="table table-dark table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Photo</th>
-                    <th>Produit</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="myTable">
-                <?php
-                // Fetch data from the database and display in table rows
-                try {
-                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $stmt = $pdo->prepare("SELECT * FROM products");
-                    $stmt->execute();
+<form method="get" class="damn">
+<div class="input-group">
+  <div class="input-group-prepend">
+    
+  </div>
+  <input type="seo" id="myInput" class="form-control" placeholder="Rechercher...">
+</div>
+		<br>
+		<div style="height: 500px; overflow-y: scroll;border: 1px solid #308F8A;">
+  <table class="table table-dark table-striped table-bordered" >
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Produit</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <?php
+        // Establish PDO connection to database
+        try {
+          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $stmt = $pdo->prepare("SELECT * FROM products");
+          $stmt->execute();
 
-                    while ($row = $stmt->fetch()) {
-                        echo "<tr>";
-                        echo "<td><img src='{$row['photo']}' alt='Photo' width='50' height='50'></td>";
-                        echo "<td>{$row['produit']}</td>";
-                        echo "<td>{$row['description']}</td>";
-                        echo "<td>{$row['date']}</td>";
-                        echo "<td style='width:200px;'>";
-                        echo "<center><a href='delete.php?id={$row['id']}' class='btn btn-danger btn-sm'><i class='fas fa-trash-alt'></i></a></center>";
-                        echo "<center><a href='panel.php?edit={$row['id']}' class='btn btn-primary btn-sm'><i class='fas fa-edit'></i></a></center>";
-                        echo "</td>";
-                        echo "</tr>";
-                    }
-                } catch (PDOException $e) {
-                    echo "Error: " . $e->getMessage();
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
+          // Fetch data from database and display in table rows
+          while ($row = $stmt->fetch()) {
+            echo "<tr>";
+            echo "<td><img src='{$row['photo']}' alt='Photo' width='50' height='50'></td>";
+            echo "<td>{$row['produit']}</td>";
+            echo "<td>{$row['description']}</td>";
+            echo "<td>{$row['date']}</td>";
+            echo "<td style='width:200px;'>";
+            echo "<center><a href='delete.php?id={$row['id']}' class='btn btn-danger btn-sm'><i class='fas fa-trash-alt'></i></a></center>";
+            echo "</td>";
+            echo "</tr>";
+          }
+        } catch(PDOException $e) {
+          echo "Error: " . $e->getMessage();
+        }
+      ?>
+    </tbody>
+  </table>
+  </div>
 </form>
 
     
