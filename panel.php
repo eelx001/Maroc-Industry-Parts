@@ -121,7 +121,7 @@ table{
             <label class="form-label" for="customFile">Photo:</label><br>
             <input type="file" class="" id="customFile" placeholder="Upload image" name="editPhoto" <?php echo isset($editPhoto) ? '' : 'required'; ?> />
             <input type="hidden" name="editId" value="<?php echo isset($editId) ? $editId : ''; ?>" />
-            
+            <button class="btn btn-default" type="submit" name="aff">Afficher</button> 
             <button class="btn btn-default" type="submit" name="update">Update</button>
         </div>
     </div>
